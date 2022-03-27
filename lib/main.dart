@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/header/header_v.dart';
+import 'package:flutter_web/navigation_bar/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,7 @@ class AppView extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: s.width * 0.1),
           child: Column(
             children: <Widget>[
+              const NavigationBarV(),
               HeaderV(s: s),
             ],
           ),

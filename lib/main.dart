@@ -58,20 +58,19 @@ class DrawerV extends StatelessWidget {
         children: [
           const DrawerHeader(
             child: Text('Drawer Header'),
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.white, Colors.blue],
+                  tileMode: TileMode.repeated),
+            ),
           ),
-          ListTile(
-            title: const Text('Item 1'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: const Text('Item 2'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          for (var item in kNavigationItems)
+            ListTile(
+              title: Text(item.text),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
         ],
       ),
     );

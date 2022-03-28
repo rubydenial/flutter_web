@@ -75,14 +75,16 @@ class HeaderBodyV extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 7),
             child: Text(
-              'Push me again',
+              'Open Drawer',
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.amber[200]),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
         ),
       ],
     );

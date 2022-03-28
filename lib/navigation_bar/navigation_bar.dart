@@ -7,7 +7,7 @@ class NavigationBarV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (ctx, sz) {
-      final onPressed = () {};
+      onPressed() {}
       return Container(
         height: 100,
         width: 1507,

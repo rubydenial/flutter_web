@@ -32,6 +32,7 @@ class AppView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Title'),
       ),
+      drawer: const DrawerV(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: s.width * 0.1),
@@ -42,6 +43,36 @@ class AppView extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class DrawerV extends StatelessWidget {
+  const DrawerV({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          const DrawerHeader(
+            child: Text('Drawer Header'),
+            decoration: BoxDecoration(color: Colors.blue),
+          ),
+          ListTile(
+            title: const Text('Item 1'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Item 2'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }

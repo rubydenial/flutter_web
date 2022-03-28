@@ -17,7 +17,7 @@ class NavigationBarV extends StatelessWidget {
             const FlutterLogo(),
             const Spacer(),
             InkWell(
-              mouseCursor: MaterialStateMouseCursor.clickable,
+              mouseCursor: MaterialStateMouseCursor.clickable, // TODO: Why ?
               onTap: () {},
               child: const Text('About me...', style: TextStyle(fontSize: 24)),
             ),

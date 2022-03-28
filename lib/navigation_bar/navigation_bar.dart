@@ -7,6 +7,7 @@ class NavigationBarV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (ctx, sz) {
+      final onPressed = () {};
       return Container(
         height: 100,
         width: 1507,
@@ -16,14 +17,44 @@ class NavigationBarV extends StatelessWidget {
           children: [
             const FlutterLogo(),
             const Spacer(),
-            InkWell(
-              mouseCursor: MaterialStateMouseCursor.clickable, // TODO: Why ?
-              onTap: () {},
-              child: const Text('About me...', style: TextStyle(fontSize: 24)),
-            ),
+            for (var item in kNavigationItems)
+              NavigationBarItem(onPressed: onPressed, text: item.text),
           ],
         ),
       );
     });
+  }
+}
+
+class NavigationItem {
+  final String text;
+  NavigationItem(this.text);
+}
+
+final kNavigationItems = [
+  NavigationItem('Projects'),
+  NavigationItem('Skills'),
+  NavigationItem('About me'),
+  NavigationItem('Blog')
+];
+
+class NavigationBarItem extends StatelessWidget {
+  const NavigationBarItem(
+      {Key? key, required this.onPressed, required this.text})
+      : super(key: key);
+
+  final Null Function() onPressed;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 64),
+      child: InkWell(
+        mouseCursor: MaterialStateMouseCursor.clickable, // TODO: Why ?
+        onTap: onPressed,
+        child: Text(text, style: const TextStyle(fontSize: 24)),
+      ),
+    );
   }
 }

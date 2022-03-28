@@ -11,7 +11,7 @@ class NavigationBarV extends StatelessWidget {
       return Container(
         height: 100,
         width: 1507,
-        color: Colors.blue[200],
+        color: Colors.amber[200],
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Row(
           children: [
